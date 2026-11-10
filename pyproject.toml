@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rtl-sdr-mcp"
+version = "0.1.0"
+description = "Give your LLM agent a real radio: an MCP server for RTL-SDR with spectrum, waterfall images, demodulation and speech-to-text."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [{ name = "kiritomp3" }]
+keywords = ["sdr", "rtl-sdr", "mcp", "llm", "agent", "radio", "claude", "ham-radio", "spectrum"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Topic :: Communications :: Ham Radio",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Operating System :: MacOS",
+  "Operating System :: POSIX :: Linux",
+]
+dependencies = ["mcp>=1.10,<2", "numpy>=1.24", "matplotlib>=3.7", "skyfield>=1.45"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+sdr-mcp = "sdr_mcp:main"
+
+[project.urls]
+Homepage = "https://github.com/kiritomp3/rtl-sdr-mcp"
+
+[tool.setuptools]
+py-modules = ["sdr_mcp"]
